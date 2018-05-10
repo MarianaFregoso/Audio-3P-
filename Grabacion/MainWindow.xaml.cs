@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using NAudio;
 using NAudio.Wave;
 using NAudio.Dsp;
+using System.Diagnostics;
+using System.Threading;
 
 
 namespace Grabacion
@@ -30,6 +32,8 @@ namespace Grabacion
         AudioFileReader reader;
         WaveOutEvent waveOut;
 
+        Stopwatch stopwatch;
+        double segundos;
 
         public MainWindow()
         {
@@ -98,8 +102,6 @@ namespace Grabacion
                     muestrasComplejas[i / 2].X = muestra32bits;
                 }
 
-
-
                 /*acumulador += muestra;
                 nummuestras++;*/
             }
@@ -120,23 +122,538 @@ namespace Grabacion
                 valoresAbsolutos.ToList().IndexOf(
                     valoresAbsolutos.Max());
             float frecuenciaFundamental =
-                (float)(indiceMaximo * wavein.WaveFormat.SampleRate) / 
-                (float) valoresAbsolutos.Length;
+                (float)(indiceMaximo * wavein.WaveFormat.SampleRate) /
+                (float)valoresAbsolutos.Length;
             lblfrecuencia.Text = frecuenciaFundamental.ToString();
 
-            
-            
 
 
 
+            lblfrecuencia.Text = frecuenciaFundamental.ToString();
 
 
+            stopwatch.Start();
+
+            if (frecuenciaFundamental > 80 && frecuenciaFundamental < 120)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
 
 
+                segundos = stopwatch.Elapsed.TotalSeconds;
 
-    }
 
-        private void btnfinalizar_Click(object sender, RoutedEventArgs e)
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'A';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 180 && frecuenciaFundamental < 220)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'B';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 280 && frecuenciaFundamental < 320)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'C';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 380 && frecuenciaFundamental < 420)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'D';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 480 && frecuenciaFundamental < 520)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'E';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 580 && frecuenciaFundamental < 620)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'F';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 680 && frecuenciaFundamental < 720)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'G';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 780 && frecuenciaFundamental < 820)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'H';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 880 && frecuenciaFundamental < 920)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'I';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 980 && frecuenciaFundamental < 1020)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'J';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1080 && frecuenciaFundamental < 1120)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'K';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1180 && frecuenciaFundamental < 1220)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'L';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1280 && frecuenciaFundamental < 1320)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'M';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1380 && frecuenciaFundamental < 1420)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'N';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1480 && frecuenciaFundamental < 1520)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'O';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1580 && frecuenciaFundamental < 1620)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'P';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1680 && frecuenciaFundamental < 1720)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'Q';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1780 && frecuenciaFundamental < 1820)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'R';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1880 && frecuenciaFundamental < 1920)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'S';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 1980 && frecuenciaFundamental < 2020)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'T';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 2080 && frecuenciaFundamental < 2120)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'U';
+                    stopwatch.Restart();
+                }
+            }
+
+
+            if (frecuenciaFundamental > 2180 && frecuenciaFundamental < 2220)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'V';
+                    stopwatch.Restart();
+                }
+            }
+
+
+            if (frecuenciaFundamental > 2280 && frecuenciaFundamental < 2320)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'W';
+                    stopwatch.Restart();
+                }
+            }
+
+            if (frecuenciaFundamental > 2380 && frecuenciaFundamental < 2420)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'X';
+                    stopwatch.Restart();
+                }
+            }
+
+
+            if (frecuenciaFundamental > 2480 && frecuenciaFundamental < 2520)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'Y';
+                    stopwatch.Restart();
+                }
+            }
+
+
+            if (frecuenciaFundamental > 2580 && frecuenciaFundamental < 2620)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += 'Z';
+                    stopwatch.Restart();
+                }
+            }
+
+
+            if (frecuenciaFundamental > 2680 && frecuenciaFundamental < 2720)
+            {
+
+                if (stopwatch.Elapsed.Seconds >= 3)
+                {
+                    stopwatch.Stop();
+                }
+
+
+                segundos = stopwatch.Elapsed.TotalSeconds;
+
+
+                if (segundos > 3 && segundos < 4)
+                {
+                    lbltono.Text += ' ';
+                    stopwatch.Restart();
+                }
+            }
+        }
+
+            private void btnfinalizar_Click(object sender, RoutedEventArgs e)
         {
             wavein.StopRecording();
         }
